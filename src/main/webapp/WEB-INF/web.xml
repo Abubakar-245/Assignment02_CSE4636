@@ -21,7 +21,7 @@
     </servlet>
     <servlet>
         <servlet-name>CheckOut</servlet-name>
-        <servlet-class>CheckOut</servlet-class>
+        <servlet-class>CheckOutPage</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
@@ -30,7 +30,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CheckOut</servlet-name>
-        <url-pattern>/CheckOut</url-pattern>
+        <url-pattern>/CheckOutPage</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CartController</servlet-name>

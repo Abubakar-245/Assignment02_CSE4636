@@ -8,16 +8,24 @@ import java.io.PrintWriter;
 public class CartController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int laptop = Integer.parseInt(request.getParameter("priceLaptop"));
-        int mobile = Integer.parseInt(request.getParameter("priceMobile"));
+        int shirts=0, shorts=0, skirts=0, pants=0;
 
-        int singlePriceLaptop = 100;
-        int singlePriceMobile = 10;
+        shirts = Integer.parseInt(request.getParameter("priceShirts"));
+        shorts = Integer.parseInt(request.getParameter("priceShorts"));
+        skirts = Integer.parseInt(request.getParameter("priceSkirts"));
+        pants = Integer.parseInt(request.getParameter("pricePants"));
 
-        int totalPriceLaptop= singlePriceLaptop * laptop;
-        int totalPriceMobile= singlePriceMobile * mobile;
+        int shirtPrice = 150;
+        int shortPrice = 150;
+        int skirtPrice = 150;
+        int pantsPrice = 150;
 
-        int totalPriceLaptopAndMobile = totalPriceLaptop + totalPriceMobile;
+        int totalshirts= shirtPrice * shirts;
+        int totalshorts= shortPrice * shorts;
+        int totalskirts= skirtPrice * skirts;
+        int totalpants= pantsPrice * pants;
+
+        int totalAllproducts = totalshirts + totalshorts + totalskirts + totalpants;
 
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
@@ -27,17 +35,28 @@ public class CartController extends HttpServlet {
         out.println("<TITLE>E-commerce Page</TITLE>");
         out.println("</HEAD>");
         out.println("<BODY>");
-        out.println(" Laptop ");
-        out.println("Laptop Selected: " + laptop );
+        out.println(" Shirts ");
+        out.println("Shirts Selected: " + shirts );
         out.println("<br>");
-        out.println("Total price of laptop: " + totalPriceLaptop+"$" );
-        out.println("<br>");
-        out.println("mobile Selected: " + mobile );
-        out.println("<br>");
-        out.println("Total price of mobile: " + totalPriceMobile+"$" );
+        out.println("Total price of Shirts: tk." + totalshirts );
         out.println("<br>");
         out.println("<br>");
-        out.println("Total price: " + totalPriceLaptopAndMobile+"$" );
+        out.println("Shorts Selected: " + shorts );
+        out.println("<br>");
+        out.println("Total price of shorts: tk." + totalshorts );
+        out.println("<br>");
+        out.println("<br>");
+        out.println("Skirts Selected: " + skirts );
+        out.println("<br>");
+        out.println("Total price of skirts: tk." + totalskirts );
+        out.println("<br>");
+        out.println("<br>");
+        out.println("Pants Selected: " + pants );
+        out.println("<br>");
+        out.println("Total price of pants: tk." + totalpants );
+        out.println("<br>");
+        out.println("<br>");
+        out.println("Total price: tk." + totalAllproducts);
         out.println("<br>");
         out.println("<br>");
         out.println("<form method=\"post\" action=\"ProductPage\"> ");
@@ -45,8 +64,9 @@ public class CartController extends HttpServlet {
         out.println("</form>");
         out.println("<br>");
         out.println("<br>");
-        out.println("<form method=\"post\" action=\"CheckOut\"> ");
+        out.println("<form method=\"post\" action=\"CheckOutPage\"> ");
         out.println("<input type=\"submit\" value=\"Check Out\">");
+        out.println("</form>");
         out.println("</BODY>");
 
 
