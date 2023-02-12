@@ -16,9 +16,9 @@ public class CartController extends HttpServlet {
         pants = Integer.parseInt(request.getParameter("pricePants"));
 
         int shirtPrice = 150;
-        int shortPrice = 150;
-        int skirtPrice = 150;
-        int pantsPrice = 150;
+        int shortPrice = 120;
+        int skirtPrice = 180;
+        int pantsPrice = 250;
 
         int totalshirts= shirtPrice * shirts;
         int totalshorts= shortPrice * shorts;
